@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>对象结构</title>
+    </head>
+    <body>
+        <script>
+            const Tom = {
+                name: 'VcrTing',
+                age: 5,
+                fmaily: {
+                    mother: 'Norah Jones',
+                    father: 'Joy',
+                    brother: 'Howard Jones'
+                },
+            }
+            const father = 'Dad';
+
+            const { name, age } = Tom;
+            const { father: f, mother, brother: b, sister = 'Tom have no sister!' } = Tom.fmaily;
+            alert(name);
+            alert(b);
+            console.log(sister);
+
+            function addDoms(options = {}) {
+                const {
+                    parent = 'body', width = '100px', height = '80px',
+                    backgroundColor = 'pink'
+                } = options;
+                const div = document.createElement('div');
+                div.style.width = width;
+                div.style.height = height;
+                div.style.backgroundColor = backgroundColor;
+
+                document.querySelector(parent).appendChild(div);
+            }
+            addDoms();
+
+            const nums = [ 1, 2, 3, 4 ]
+            const [one, ...others ] = nums
+            console.info(one, ...others)
+
+            const a = 10 
+            const b = 20 
+            [ b, a ] = [ a, b ]
+            console.log(a, b)
+        </script>
+    </body>
+</html>

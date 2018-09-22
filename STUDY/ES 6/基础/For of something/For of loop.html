@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>对象结构</title>
+    </head>
+    <style>
+        .completed {
+            text-decoration: underline;
+        }
+    </style>
+    <body>
+        <ul>
+            <li>Go to Store</li>
+            <li>Watch Tv</li>
+            <li>Go Shopping</li>
+        </ul>
+        <script>
+            Array.prototype.first = function () {
+                return this[0];
+            }
+
+            const fruits = [ 'VcrT', 'Apple', 'Mango', 'Orange' ];
+            fruits.a = '属性';
+
+            for (let i; i< fruits.length; i ++) {
+                console.info(fruits[i]);
+            }
+
+            fruits.forEach( fruit => {
+                console.info(fruit);
+                console.info('无法 break ， 无法 continue');
+            })
+
+            console.info('For in loop');
+
+            for (let index in fruits) {
+                if (index == 0) {
+                    console.info('VcrTing');
+                }
+                else {
+                    console.info(fruits[index]);
+                }
+            }
+
+            console.info('For of loop');
+
+            for (let index of fruits) {
+                console.info(fruits[index]);
+            }
+
+            const lis = document.querySelectorAll('li');
+            for (let li of lis) {
+                li.addEventListener('click', function() {
+                    this.classList.toggle('completed');
+                })
+            }
+        </script>
+    </body>
+</html>

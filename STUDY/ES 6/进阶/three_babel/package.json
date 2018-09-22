@@ -1,0 +1,19 @@
+{
+  "name": "three_babel",
+  "version": "1.0.0",
+  "description": "Three",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production --progress --display-modules --colors --display-reasons",
+    "babel": "babel app.js --watch --out-file app-compiled.js",
+    "server": "browser-sync start --directory --server --files '*.html, *.js, *.css'"
+  },
+  "author": "VcrTing",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}

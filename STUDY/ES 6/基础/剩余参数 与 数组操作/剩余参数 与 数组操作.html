@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>剩余参数 与 扩展运算符</title>
+    </head>
+    <body>
+        <script>
+            function sum(...nums) {
+                console.log(nums);
+                //                  上一个结果, 当前值
+                return nums.reduce( (prev, curr) => prev + curr, 0 )
+            }
+            sum(1, 2, 3, 4);
+
+            const youngers = [ 'boby', 'vcr', 'lucy', 'jerry' ];
+            const olders = [ 'james', 'afrew', 'martin' ];
+
+            // 通常的 操作方法
+            let members = [];
+            members = members.concat(youngers);
+            members.push('jerry');
+            members = members.concat(olders);
+            console.info(members)
+
+            // 运用了 扩展运算符 的操作方法
+            let mems = [...'abcde'];
+            mems = [];
+            mems = [ ...youngers, 'jerry', ...olders ]; 
+
+            // 数组拷贝（深）
+            let new_mems = [].concat(mems);
+            let new_mems_two = [...new_mems];
+
+            mems[0] = 'VcrTing';
+            console.info(mems);
+            console.info(new_mems_two);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>build promise</title>
+    </head>
+    <body>
+        <div class="msg"></div>
+        <script>
+            // Simple example
+            const p = new Promise((reslove, reject) => {
+                setTimeout( () => {
+                    // reslove('VcrT is awesome!'); 对的
+                    reject(Error('VcrT isn\'t awesome!'));
+                }, 2000);
+            });
+            p.then(data => { alert(data) })
+                .catch(error => { alert(data) });
+
+            // 应用场景 1
+            const msg_div = document.querySelector('.msg');
+            const users = [
+                { name: 'VcrT', age: 5,  eat() { alert('i am eatting') } },
+                { name: 'Lucy', age: 12, hading() { alert('i like You!!!') }},
+                { name: 'Jack', age: 24, cakcing() { alert('i will chack you something!!!') }}
+            ]
+            function get_id (age) {
+                return new Promise( (reslove, reject) => {
+                    setTimeout( () => {
+                        const user = users.find(user => user.age === age);
+                        if (user) {
+                            reslove(user);
+                        } else {
+                            reject(Error('No repo found.'))
+                        }
+                    }, 2000)
+                });
+            }
+            get_id(12)
+            .then(ret => {
+                console.log(ret);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+            // 应用场景 2
+            const usersPromise = new Promise( (reslove, reject) => {
+                setTimeout( () => {
+                    reslove(['mojombo', 'vanpelt', 'wycats']);
+                }, 2000);
+            });
+            const moviePromise = new Promise( (reslove, reject) => {
+                setTimeout( () => {
+                    reslove({ name: '摔跤吧！爸爸', rating: 9.2, year: 2016 });
+                }, 500);
+            });
+
+            // 一个失败，全部失败，多个错误，取最先那个
+            // all: 取全部
+            Promise
+                .all([usersPromise, moviePromise])
+                .then(response => {
+                    user_ret = response[0];
+                    movie_ret = response[1];
+                    console.info('user_ret =', user_ret);
+                    console.info('movie_ret =', movie_ret);
+                })
+                .catch(error => {
+                    console.info('error =', error);
+                })
+            // race: 取最先,后面的不取. 该例中取movie
+            Promise
+                .race([usersPromise, moviePromise])
+                .then(response => {
+                    user_ret = response[0];
+                    movie_ret = response[1];
+                    console.info('user_ret =', user_ret);
+                    console.info('movie_ret =', movie_ret);
+                })
+                .catch(error => {
+                    console.info('error =', error);
+                })
+        </script>
+    </body>
+</html>

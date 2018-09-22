@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            标签模板字符串
+        </title>
+    </head>
+    <body>
+        <script>
+            function hightlight(strs, ...argss) {
+                const hightlighted = argss.map(value => `
+                    <span class="hightlight">${value}</span>
+                `);
+                console.info(hightlighted);
+
+                let str = '';
+                strs.forEach((string, i) => str += `${string}${hightlighted[i] || ''}`);
+
+                console.info(strs);
+                console.info(argss);
+                return str;
+            }
+            const user = 'VcrT';
+            const topic = 'Learn to use markdown';
+            const sentence = hightlight`${user} has commented on your topic ${topic}.`;
+
+            document.body.innerHTML = sentence;
+        </script>
+    </body>
+</html>

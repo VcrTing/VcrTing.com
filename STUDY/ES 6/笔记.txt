@@ -1,0 +1,35 @@
+﻿let 变量, brock scope, 作用在 {} 这种块级, 
+    在块中不可重复声明, 可重新赋值
+
+const 变量, brock scope, 作用在 {} 这种块级, 
+    在块不可重复声明, 不可重赋值, 但是赋值对象为对象的时候，对象内的属性值可以改变
+
+var 变量, function scope, 正常的变量，可全局，可局部。
+
+npm init
+
+babeljs: https://babeljs.io/setup#installation, 使得es6能够兼容大部分浏览器
+
+
+模块:
+	解决命名冲突
+	提升访问速度
+
+前端项目搭建:
+	webpack 4.0
+
+使用 System.js
+	https://jspm.io/system@0.19.js
+
+使用 babel:
+	npm install babel-cli babel-preset-env babel-preset-es2015 --save-dev
+	"script": {
+		"babel": "babel app.js --watch --out-file app-compiled.js"
+	}
+
+Poilfill:
+	https://ft-polyfill-service.herokuapp.com/v2/polyfill.js
+	让浏览器更es6兼容代码,能自动检测浏览器的版本和类型，
+	进行对es5语法的补充，使es6更加适用于该浏览器
+	进行对es的新特性进行兼容
+	这样开发者就能专注于es6代码的开发了

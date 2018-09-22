@@ -1,0 +1,25 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "First",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production --progress --display-modules --colors --display-reasons",
+    "server": "browser-sync start --directory --server --files '*.html, *.js, *.css'"
+  },
+  "author": "VcrTing",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.7",
+    "lodash": "^4.17.11",
+    "md5": "^2.2.1",
+    "moment": "^2.22.2",
+    "slug": "^0.9.1",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  }
+}

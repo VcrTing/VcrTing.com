@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>
+            This 
+        </title>
+    </head>
+    <body>
+        <script>
+            var VcrT = {
+                name: 'VcrTing',
+                hobby: [ 'coding' ],
+                print: function() {
+                    this.hobby.map( function(str){
+                        alert(`${this.name} like ${str}`);
+                    })
+                }
+            }
+            VcrT.print();
+
+            var VcrT = {
+                name: 'VcrTing',
+                hobby: [ 'coding' ],
+                print: function() {
+                    const self = this;
+                    this.hobby.map( function(str){
+                        alert(`${self.name} like ${str}`);
+                    })
+                }
+            }
+            VcrT.print();
+
+            var VcrT = {
+                name: 'VcrTing',
+                hobby: [ 'coding' ],
+                print: function() {
+                    this.hobby.map( str => {
+                        alert(`${this.name} like ${str}`);
+                    })
+                }
+            }
+            VcrT.print();
+        </script>
+    </body>
+</html>

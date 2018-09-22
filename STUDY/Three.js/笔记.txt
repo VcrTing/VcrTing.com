@@ -1,0 +1,51 @@
+场景:
+    Scene():
+        方法:
+            add
+
+相机:
+    PerspectiveCamera(arg1, arg2, arg3, arg4):
+        参数:
+            arg1: 视野(单位: 度)
+            arg2: 宽高比
+            arg3: 近剪裁平面, 过近的物体将不会被渲染
+            arg4: 远剪裁平面, 超出的物体将不会被渲染
+
+渲染器:
+    WebGLRenderer():
+        方法:
+            setSize(arg1, arg2, arg3):
+                arg1: 宽度
+                arg2: 高度
+                arg3: 是否开启高分辨率, def = True
+            render( arg1, arg2): 渲染
+                arg1: 场景
+                arg2: 相机
+
+对象:
+    BoxGeometry(arg1, arg2, arg3): 这是一个包含多维数据集的所有点（顶点）和填充（面）的对象
+        参数:
+            arg1: x
+            arg2: y
+            arg3: z
+    Geometry:
+        方法:
+            geometry.vertices.push
+    BufferGeometry:
+    TextGeometry( text, parameters )
+
+材料:
+    MeshBasicMaterial(arg1)
+        参数:
+            arg1: 例: { color: 0x00ff00 }
+    LineBasicMaterial(arg1)
+    LineDashedMaterial(arg1)
+
+网格:
+    Mesh(arg1, arg2)):
+        参数:
+            arg1: 对象
+            arg2: 材料
+        属性:
+            mesh.rotation
+        方法:

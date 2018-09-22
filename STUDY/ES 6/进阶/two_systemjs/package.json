@@ -1,0 +1,17 @@
+{
+  "name": "two_systemjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production --progress --display-modules --colors --display-reasons",
+    "server": "browser-sync start --directory --server --files '*.html, *.js, *.css'"
+  },
+  "author": "VcrTing",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "lodash": "^4.17.11"
+  }
+}

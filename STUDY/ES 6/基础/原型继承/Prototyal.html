@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>prototype</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            function User(name, email) {
+                this.name = name;
+                this.email = email;
+                // 把这个方法写在这，每次new User的话, 都会 new 一个 info 的 function,
+                /*
+                this.info = function() {
+                    console.log(`Hi I'm ${this.name}`);
+                }
+                */
+            }
+
+            // 如果把 info 方法 赋在 property 原型上, 那就会生成一次
+            User.prototype.info = function() {
+                console.log(`Hi I'm ${this.name}`);
+            }
+
+            // 除此之外, 还能新增一些属性
+            User.prototype.descript = function () {
+                return `I am ${this.name}, my email is ${this.email}`;
+            }
+
+            const codests = new User('vcrt', 'vcrt@163.com');
+            codests.info();
+            console.info(User.prototype);
+            console.info(codests.descript());
+        </script>
+    </body>
+</html>

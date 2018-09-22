@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Array func</title>
+    </head>
+    <style>
+        .completed {
+            text-decoration: underline;
+        }
+    </style>
+    <body>
+        <script>
+            const todos = document.querySelectorAll('li');
+            console.log(todos);
+            console.info('__proto__', ' : 原型');
+
+            // const todosArr = Array.from(todos);
+            // const names = todosArr.map(todo => todo.textContent);
+
+            // 转化为 数组: Array.from
+            const names = Array.from(todos, todo => todo.textContent);
+            console.log(names);
+
+            // 保持 Array 对象返回的一致性: Array.of
+            let a = new Array(7);
+            console.info(a);
+            a = Array.of(7);
+            console.info(a);
+
+            // list.find(func) 寻找， 性能上有优势
+            const inventory = [
+                { name: 'aplle', age: 18 },
+                { name: 'banana', age: 0 },
+                { name: 'orange', age: 24 }
+            ];
+
+            let find_ret = inventory.find(fruit => {
+                if (fruit.name === 'orange') {
+                    return true 
+                }
+                return false
+            });
+
+            // find() return value
+            find_ret = inventory.find( furit => furit.name === 'orange' );
+            console.info(find_ret);
+
+            // findIndex() return int
+            let find_index = inventory.findIndex( furit => furit.name === 'orange' );
+            console.info(find_index);
+
+            // some() return bool
+            const all_furit_has_age = inventory.some( furit => furit.age > 0 );
+            console.info(all_furit_has_age);
+
+            // every() return bool
+            const is_all_fruit_age_than_0 = inventory.every( furit => fruit.age > 0 );
+            console.info(is_all_fruit_age_than_0)
+        </script>
+    </body>
+</html>

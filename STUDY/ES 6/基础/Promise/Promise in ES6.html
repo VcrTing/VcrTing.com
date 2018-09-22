@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>ES6 的 promise</title>
+    </head>
+    <body>
+        <script src='../axios.js'></script>
+        <script>
+            let user_name;
+
+            // user_promise 就是一个 Promise
+            const user_promise = axios.get('https://api.github.com/users');
+            console.log('started');
+            
+            user_promise
+                .then( response => {
+                user_name = response.data[0].login;
+                return axios.get(`https://api.github.com/users/${user_name}/repos`);
+            })
+            .then( response => {
+                console.log(response.data);
+                console.log('end');
+            })
+            .catch( error => {
+                console.info(error);
+            });
+        </script>
+    </body>
+</html>

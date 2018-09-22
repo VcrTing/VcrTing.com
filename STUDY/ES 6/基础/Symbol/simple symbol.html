@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Symbol</title>
+        <style>
+            .b {
+                background-color: darkgoldenrod
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            // 创建其为唯一, 但是不能被循环
+            const peter = Symbol('peter');
+            const student = Symbol('student');
+            const classRoom = {
+                [Symbol('lily')]: { grade: 60, gender: 'female' },
+                [Symbol('Nina')]: { grade: 80, gender: 'female' },
+                [Symbol('Nina')]: { grade: 90, gender: 'female' },
+            }
+
+            const sysms = Object.getOwnPropertySymbols(classRoom).map(sym => classRoom[sym]);
+            console.info(sysms);
+        </script>
+    </body>
+</html>

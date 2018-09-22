@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>For of Iterator</title>
+    </head>
+    <body>
+        <script>
+            const fruits = [ 'Aplle', 'Banana', 'Mango', 'Orange' ]
+
+            const iter = fruits.entries()
+
+            console.info(iter)
+            console.info(iter.next())
+
+            for ( let index of iter ) {
+                console.info(index)
+            }
+
+            for ( let [ index, fruit ] of fruits.entries() ) {
+                console.info(index + 1, fruit)
+            }
+        </script>
+    </body>
+</html>

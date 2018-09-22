@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>匿名函数</title>
+    </head>
+    <body>
+        <script>
+            const nums = [ 11, 2, 33, 55, 66 ];
+            
+            const double = nums.map(function(num, i){
+                return num * 2;
+            });
+
+            const double2 = nums.map( num => {
+                return num * 2;
+            });
+
+            const double3 = nums.map( num => num * 2);
+
+            const lambda_func = num => { alert(`hello ${num}`) }
+
+            lambda_func('ES6')
+
+            console.log(double)
+        </script>
+    </body>
+</html>

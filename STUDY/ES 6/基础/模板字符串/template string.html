@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Template String/literals</title>
+    </head>
+    <body>
+        <script>
+            const p = 'VcrTing';
+            const a = 5;
+            let sentence = p + ' is ' + a + ' years old.';
+            sentence = `${p} is ${a * 5} years old.`;
+            alert(sentence)
+    
+            let template = [
+                '<div class="in">',
+                    '<p>VcrTing</p>',
+                '</div>'
+            ].join('');
+            alert(template)
+            
+            template = `
+                <div class="in">
+                    <p>${p}</p>
+                </div>
+            `.trim();
+            alert(template)
+
+            const VcrT = {
+                name: 'VcrTing',
+                date: '2017-05-07',
+                todos: [
+                    {name: 'Go to Store', completed: false},
+                    {name: 'Watch Movie', completed: true},
+                    {name: 'Running', completed: true}
+                ]
+            }
+
+            function renderTodo(todos) {
+                return (
+                    `
+                    <ul>
+                        ${todos.map(todo => `
+                            <li>
+                                ${todo.name} ${todo.completed ? '对': '错'}
+                            </li>
+                        `).join('')}
+                    </ul>
+                    `
+                )
+            }
+
+            template = `
+                <div>${VcrT.name}</div>
+                <div>
+                    ${renderTodo(VcrT.todos)}
+                </div>
+                <div>${VcrT.date}</div>
+            `
+
+            document.body.innerHTML = template;
+        </script>
+    </body>
+</html>

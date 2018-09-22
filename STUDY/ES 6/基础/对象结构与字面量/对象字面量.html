@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>好看的css hover动画</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <script>
+            const name = 'VcrT';
+            const age = 2;
+            const birthday = '2015-09';
+
+            // 对象属性名 与 方法的 简写
+            const VcrT = {
+                name,
+                age,
+                birthday,
+                eat() {
+                    alert(`${this.name} eatting !!!`);
+                },
+                // get_name: function() {
+                //     return this.name;
+                // },
+                get_name() {
+                    return this.age;
+                }
+            }
+
+            // 对象内部新增 计算属性
+
+            // 应用 1
+            let id = 0;
+            let userId = {};
+            // older example
+            userId[ `user-${++id}` ] = id;
+            userId[ `user-${++id}` ] = id;
+            // now in ES6
+            userId = {
+                [ `user-${++id}` ]: id,
+                [ `user-${++id}` ]: id
+            }
+            console.info(userId);
+
+            // 应用 2 
+            const keys = [ 'name', 'age', 'bith' ];
+            const values = [ 'VcrTing', 2, '2015-09' ];
+
+            const vcrting = {
+                [keys.shift()]: values.shift(),
+                [keys.shift()]: values.shift(),
+                [keys.shift()]: values.shift()
+            }
+        </script>
+    </body>
+</html>

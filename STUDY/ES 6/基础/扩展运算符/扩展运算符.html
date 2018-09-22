@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>好看的css hover动画</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>Go to store</li>
+            <li>Watch TV</li>
+            <li>GO Shopping</li>
+        </ul>
+        <script>
+            // 扩展运算符 回顾
+            const todoss = [ ...document.querySelectorAll('li') ];
+            console.log(todoss);
+            const names = todoss.map(todo => todo.textContent);
+
+            const favorites = {
+                color: [ 'yellow', 'blue' ],
+                fruits: [ 'banana', 'mongo' ]
+            }
+            let ther_will_in_my_home = [ 'milk', 'toys', ...favorites.fruits ];
+
+            // 例子
+            const todos = [
+                { id: 1, name: 'Go to store', completed: false },
+                { id: 2, name: 'Watch TV', completed: true },
+                { id: 3, name: 'Go Shopping', completed: false }
+            ]
+
+            const id = 2;
+            const todoindex = todos.findIndex( todo => todo.id === id );
+
+            const newTodos = [ ...todos.slice(0, todoindex), ...todos.slice(todoindex + 1) ];
+            console.log( newTodos );
+
+            // this.setState( {todos: newTodos} );
+
+            // 它在函数中的 应用1
+            const fruits = [ 'apple', 'banana', 'pear' ];
+            const newFruits = [ 'orange', 'mongo' ];
+
+            // fruits.push.apply(fruits, newFruits);
+            fruits.push(...newFruits);
+
+            console.log(fruits);
+
+            // 应用 2 ，减轻了一个一个传入参数的痛苦
+            const dateFields = [ 2017, 5, 6 ];
+            const date = new Date(...dateFields);
+            console.log(date);
+        </script>
+    </body>
+</html>

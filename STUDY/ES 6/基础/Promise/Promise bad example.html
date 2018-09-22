@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>ES6 的 promise</title>
+    </head>
+    <body>
+        <script src='../jquery-3.3.1.min.js'></script>
+        <script>
+            let user;
+
+            $.get('https://api.github.com/users', data => {
+                console.log('fetched all users');
+                user = data[0].login;
+            });
+
+            $.get(`https://api.github.com/users/${user}/repos`, data => {
+                console.log('fetched user repos');
+                console.log(data);
+            });
+        </script>
+    </body>
+</html>

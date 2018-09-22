@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>默认值</title>
+    </head>
+    <body>
+        <script>
+            function aa(a, b) {
+                a = a || 0;
+                b = b || 'VcrTing';
+                alert(b)
+            }
+            aa()
+
+            
+            function aa2(a = 0, b = 'VcrTing') {
+                alert(a * b)
+            }
+            aa2(null, 0)
+            aa2(undefined, 'VcrT')
+
+        </script>
+    </body>
+</html>
