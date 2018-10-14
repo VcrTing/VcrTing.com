@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>display 有哪些值，说明它们的作用</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        display 有哪些值，说明它们的作用
+        <div class="outter">
+            <div class="item i1">i1</div>
+            <div class="item i2">i2</div>
+            <div class="item i3">i3</div>
+            <div class="item i4">i4</div>
+        </div>
+        <style>
+            .outter {
+                margin: 120px;
+                padding: 20px;
+                margin: 0 auto;
+                position: absolute;
+                display: inline;
+                background: pink;
+            }
+            .item {
+                width: 200px;
+                height: 50px;
+                background: rgba(0, 0, 0, 0.5);
+                margin-top: 20px;
+            }
+            .i1 {
+                display: block;
+            }
+            .i2 {
+                display: none;
+            }
+            .i3 {
+                display: table;
+            }
+            .i4 {
+                display: table;
+            }
+        </style>
+        <script src="" async defer></script>
+    </body>
+</html>

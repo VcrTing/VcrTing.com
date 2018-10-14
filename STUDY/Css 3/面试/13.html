@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> 有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度
+        <div class="out">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+        <style>
+            .out {
+                width: 100%;
+                height: 200px;
+                position: relative;
+                border: 1px solid pink;
+            }
+            .top {
+                width: 100%;
+                height: 20px;
+                display: block;
+                background: rgba(255, 174, 243, 1);
+            }
+            .bottom {
+                position: absolute; 
+                top: 20px;
+                width: 100%; 
+                bottom: 0; 
+                left: 0;
+                background: rgba(0, 0, 0, 0.1);
+            }
+        </style>
+        <script src="" async defer></script>
+    </body>
+</html>

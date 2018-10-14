@@ -1,0 +1,39 @@
+1: jQuery 库中的 $() 是什么？
+    $() 函数是 jQuery() 函数的别称
+    $() 函数用于将任何对象包裹成 jQuery 对象，
+    接着你就被允许调用定义在 jQuery 对象上的多个不同方法 
+
+2: 如何在点击一个按钮时使用 jQuery 隐藏一个图片？
+    $('#ButtonToClick').click(function(){
+        $('#ImageToHide').hide();
+    });
+
+3: $(document).ready() 是个什么函数？为什么要用它？
+    ready() 函数用于在文档进入ready状态时执行代码。
+    当DOM 完全加载（例如HTML被完全解析DOM树构建完成时），jQuery允许你执行代码。
+    使用$(document).ready()的最大好处在于它适用于所有浏览器，jQuery帮你解决了跨浏览器的难题
+
+4: js 的 windows.onload 与 Jquery ready 函数有何不同？
+    js 要等dom树加载完成后，还有等图片、音频、视频在内的资源都完全加载，windows.onload 会让用户感觉到有延迟
+    jq 只要等DOM树加载完就可以，所以 jq 的更快
+
+5: 如何找到所有 HTML select 标签的选中项？ 
+
+6: each
+    就像一个迭代器，允许你遍历一个元素集合， 可以传一个函数给 each 方法, 
+    xxx.each 会在 xxx 的每个元素上执行传入的函数
+
+7: remove() 与 detach() 的区别？
+    remove 会移除绑定在该元素的事件，
+    detach 不会，
+    它们两的共同点是都不会把匹配到的元素从jquery中删除
+
+8: 使用 CDN 加载 jQuery 库的主要优势是什么 ?
+    除了报错节省服务器带宽以及更快的下载速度这许多的好处之外, 
+    最重要的是，如果浏览器已经从同一个CDN下载类相同的 jQuery 版本, 
+    那么它就不会再去下载它一次.
+    因此今时今日，许多公共的网站都将jQuery用于用户交互和动画, 
+    如果浏览器已经有了下载好的jQuery库，网站就能有非常好的展示机会。
+
+9: 哪种方式更高效：document.getElementbyId("myId") 还是 $("#myId")？
+　　第一种，因为它直接调用了 JavaScript 引擎。

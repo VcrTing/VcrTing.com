@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="f-div">浮动的div居中</div>
+        <div class="p-div">左右居中</div>
+        <style>
+            .f-div {
+                border: 1px solid pink;
+                float: left;
+                position: absolute;
+                height: 100px;
+                width: 200px;
+                left: 50%;
+                top: 50%;
+                margin-top: -50px;
+                margin-left: -100px;
+            }
+            .p-div {
+                border: 1px solid skyblue;
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+
+                font-size: 12px;
+            }
+        </style>
+        <script src="" async defer></script>
+    </body>
+</html>

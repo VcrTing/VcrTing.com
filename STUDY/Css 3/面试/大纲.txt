@@ -1,0 +1,48 @@
+1: 如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？
+
+2: display 有哪些值，说明它们的作用
+
+3: css 创建一个三角形
+
+4:  常见的兼容性问题？
+    Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,
+        可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决。
+
+5: 为什么要初始化CSS样式
+    因为浏览器的兼容问题，
+    不同浏览器对有些标签的默认值是不同的，
+    如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
+
+6: CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
+    当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
+    chrome中，使用collapse值和使用hidden没有区别。
+    firefox，opera和IE，使用collapse值和使用display：none没有什么区别。
+
+7: display: none, visibility: hidden
+
+8: 上下 margin 重合
+
+9: position:fixed;在android下无效怎么处理？
+    <meta name="viewport" 
+        content="width=device-width, 
+        initial-scale=1.0, 
+        maximum-scale=1.0, 
+        minimum-scale=1.0, 
+    user-scalable=no"/>
+
+10: 如果需要手动写动画，你认为最小时间间隔是多久，为什么？
+    多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms。
+
+11: li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？
+    行框的排列会受到中间空白（回车空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了。
+
+12: display:inline-block 什么时候会显示间隙？
+
+13:  有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度
+
+14: style标签写在body后与body前有什么区别？
+    页面加载自上而下 当然是先加载样式。
+    写在body标签后由于浏览器以逐行方式对HTML文档进行解析，
+    当解析到写在尾部的样式表（外联或写在style标签）会导致浏览器停止之前的渲染，
+    等待加载且解析样式表完成之后重新渲染，
+    在windows的IE下可能会出现FOUC现象（即样式失效导致的页面闪烁问题）

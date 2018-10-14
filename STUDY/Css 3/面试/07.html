@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>display 与 visibility</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="one">
+            <div class="d"></div>
+            <div class="v"></div>
+            <div class="help"></div>
+        </div>
+        <style>
+            body {
+                margin: 0 auto;
+                width: 100%;
+            }
+            .one {
+                background: pink;
+                width: 800px;
+                height: 600px;
+            }
+            .d, .v, .help {
+                width: 60px;
+                height: 60px;
+                position: static;
+                margin: 20px;
+                background: #ffffff;
+            }
+            .d {
+                display: none;
+            }
+            .v {
+                visibility: hidden;
+            }
+            .help {
+                visibility: collapse;
+            }
+        </style>
+        <script src="" async defer></script>
+    </body>
+</html>
