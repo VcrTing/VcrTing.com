@@ -1,0 +1,95 @@
+$pink = rgba(255, 174, 200, 1);
+$deeppink = rgba(255, 119, 162, 1);
+$darkpink = rgba(255, 61, 93, 1);
+$lightpink = rgba(255, 215, 228, 1);
+
+$green = #00a8f3
+
+$gray = rgba(88, 88, 88, 1)
+
+$bg = rgb(21, 23, 29)
+
+/*
+    Menu
+*/
+.container
+    width 70%
+    margin 0 auto
+.col-4
+    width 100%
+.col-6
+    width 100%
+@media screen and (max-width: 1470px)
+    .container
+        width 80%
+        margin 0 auto
+    .col-4
+        width 40%
+    .col-6
+        width 60%
+@media screen and (max-width: 1025px)
+    .container
+        width 84%
+        margin 0 auto
+@media screen and (max-width: 769px)
+    .container
+        width 92%
+        margin 0 auto
+@media screen and (max-width: 461px)
+    .container
+        width 94%
+        margin 0 auto
+    .col-4
+        width 100%
+    .col-6
+        width 100%
+/*
+    Button
+*/
+.btn
+    display block
+    border 1px solid #ffffff
+    background #ffffff
+    padding 11px 21px
+    font-size 18px
+    color black
+    transition all 0.3s
+    i
+        font-size 18px
+    &:hover
+        background none
+        color #ffffff
+        border-color $green
+/*
+    TOOLS
+*/
+.fr
+    float right
+.fl
+    float left
+.clear-float
+    zoom 1
+    &::after
+        clear both
+        content ''
+        display block
+        width 0
+        height 0
+        visibility hidden
+.hand
+    cursor default
+/*
+    Element
+*/
+.img
+    width 100%
+    height auto
+ul
+    list-style none
+    padding 0 0
+    li
+        margin 0 auto
+.main-color-text
+    color $pink
+    &:hover
+        color $deeppink
