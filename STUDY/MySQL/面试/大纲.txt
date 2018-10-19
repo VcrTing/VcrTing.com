@@ -1,0 +1,72 @@
+1: 触发器的作用:
+    是一种特殊的存储过程，主要是通过事件来触发而被执行的，可以强化约束
+    保证数据的完整性，
+    触发器可以在插入表的时候检查一下字段是否正确，触发器可以对表进行常规操作
+
+2: group_concat(name) 将分组后的数据用 , 号连接起来
+
+3: having: 根据组筛选
+    查询 部门 内 人数大于3 的 所有男员工 的 信息
+    select * from member_member where depart in (select depart from member_member group by depart having count(name)>='3') and gender = '男';
+    讲解:                                         查询 人数 大于3 的 部门，                           筛选                         性别为 男                                  
+
+4: having 与 where 的区别:
+    where 作用于表 或 视图，
+    having 作用于 分组后的筛选
+
+5: Mysql 的时间函数:
+    date = 1998-10-28 06:15:03
+    DAYOFWEEK(date) 返回 星期几，不过索引是对应 ODBC 标准的，1=星期天...7=星期六
+    DAYOFMONTH(date) 返回月份中的日期 1-31
+    DAYOFYEAR(date) 返回年中的日期 1-366
+
+    YEAR(date) 返回年，1000-9999
+    QUARTER(date) 返回季度，1-4
+    MONTH(date) 返回月，1-12
+    WEEKDAY(date) 返回星期，0=星期一...6=星期天
+    DAY(date) 返回天，1-31
+    HOUR(date) 返回小时，0-23
+    MINUTE(date) 返回分钟，0-59
+    SECOND(date) 返回秒数，0-59
+
+    DATE_FORMAT(date, '%y年%m月%d日%a星期%H小时%i分钟%S秒')
+
+6: 存储过程:
+    create procedure the_name() // 创建
+    call the_name // 调用
+    drop procedure the_name // 删除
+
+    () 里面可以传参数，传参数的方法有两种类型，in 类型 与 out 类型
+    例如
+        in the_param int
+        out the_param varchar(20)
+    区别
+        in 是传入
+        out 是输出
+    例句
+        delimiter //
+        create procedure p_member_member(out his_name varchar(20), in max_salary float)
+        begin
+        select name into his_name from member_member where salary = max_salary;
+        end
+        //
+        set @his_name = '';
+        set @max_salary = 20000;
+        call p_member_member(@his_name, @max_salary);
+        select @his_name;
+        drop procedure p_member_member;
+
+7: 触发器:
+    语法 
+        create trigger
+
+    例句
+        delimiter //
+        create trigger add_businesstrip
+        after insert
+        on member_member
+        for each row
+        begin
+        insert into record_businesstrip(go_time, mark, member_id) values (sysdate(), concat_ws('', new.name, '出差办公去了'), new.id);
+        end
+        //

@@ -1,0 +1,32 @@
+数据库优化的目的:
+    避免由于数据库连接timeout产生页面5xx错误
+    避免由于慢查询造成页面无法加载
+    避免由于阻塞造成数据无法提交
+    增加用户体验
+
+优化需求:
+    SQL 及 索引优化
+    数据库表结构优化
+    系统配置优化
+    硬件优化
+
+慢查询日志:
+    输入sql语句
+    show variables like 'slow_query_log'
+    set global slow_query_log_file = '/home/mysql/sql_log/mysql-slow.log'
+    set global log_queries_not_using_indexes = 1
+    set global long_query_time = 0.01
+
+日志存储格式:
+    Time: xxxxxx xx:xx:xx # 查询执行日期时间
+    User@Host: root[root] @ localhost [] # 执行sql的主机信息
+    Query_time: x.xxx Lock_time: x.xxx Rows_sent: 0 Rows_examined: 0 # sql 执行信息
+    SET timestamp=xxxxxxxx; # sql 执行时间
+    show tables; # 执行的内容
+
+日志分析工具:
+    mysqldumpslow
+    使用:
+        mysqldumpslow option log_file
+        例句:
+            mysqldumpslow -t num /home/mysql/sql_log/mysql-slow.log | more

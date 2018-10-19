@@ -1,0 +1,45 @@
+join的类型:
+    内连接   inner join 
+    全外连接 full outer join 
+    左外连接 left outer join 
+    右外连接 right outer join 
+    交叉连接 cross join 
+
+内连接:
+    有 A 与 B 表
+    可以求得
+    A 交 B
+    例句:
+        select a.name,a.age,b.over from user1 a join user2 b on a.name=b.name
+
+左外连接:
+    以 A 为左， B 为右, 是以 A 为主， B 进行一一对应
+    可以求得
+    A - B
+    例句:
+        select * from table1 a left join table2 b on a.key = b.key where b.key is null
+    A 并 B 中的 A 
+    例句:
+        select * from table1 a left join table2 b on a.key = b.key where b.key
+
+右外连接:
+    与左连接相反，B 以左右边为主。
+
+全连接:
+    可以求得
+    A 并 B 
+    例句:
+        select * from table1 a full outer join table2 b on a.key = b.key 
+    反 (A 交 B)
+    例句:
+        select * from table1 a full outer join table2 b on a.key = b.key where a.key is null or b.key is null
+
+交叉连接:
+    也称 笛卡尔连接/叉乘
+    基础例句:
+        select * from table1 cross join table2
+    很少使用！
+
+优化子查询
+
+优化聚合查询
