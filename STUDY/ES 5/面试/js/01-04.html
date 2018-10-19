@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Js</title>
+    </head>
+    <body>
+        <script>
+            // 判断一个字符串是否是字符串
+            var a = ' My name is VcrTing. '
+            if (typeof(a) === 'string') {
+                console.log('是字符串' + a)
+            } else {
+                console.log('不是字符串')
+            }
+            // 去除字符串的空格
+            var str = a.trim()
+            console.log('这是a.trim()后的字符串:' + str + '哈哈')
+
+            // 获取浏览器url中的search参数的值
+            function get_href_param(href) {
+                var args = href.split('?')
+                if (args[0] == href) {
+                    return ''
+                }
+                var param_list = args[1].split('&')
+                var ret = {}
+                for (var i= 0; i< param_list.length; i++ ) {
+                    var params = param_list[i].split('=')
+                    ret[params[0]] = params[1]
+                }
+                return ret 
+            }
+            var ret = get_href_param('http://www.baidu.com/?search=VcrT&name=VcrTing')
+            console.log('获取到的param[search]为：', ret['search'])
+
+            // 字符串方法
+            
+            // concat
+            var a = '123456'
+            var b = 'VcrT'
+            console.log('concat = '.concat(a, b))
+            // indexOf
+            var a = '123'
+            var b = 'VcrT123456 123'
+            console.log(b + '.indexOf(' + a + ') =', b.indexOf(a))
+            // charAt
+            var a = 5
+            var b = 'fedcba'
+            console.log(b + '.charAt(' + a + ') =', b.charAt(a))
+            // lastIndexOf
+            var a = '123'
+            var b = 'VcrT123456 123'
+            console.log(b + '.lastIndexOf(' + a + ') =', b.lastIndexOf(a))
+            // match
+            var r = '/\d+/g'
+            var b = '234 abc 234 bb'
+            console.log(b + '.match(' + r + ') =', b.match(r))
+            // substr
+            var a = 2
+            var b = 1
+            var s = 'VcrTing'
+            console.log(s + '.substr(' + a + ', ' + b + ') =', s.substr(a, b))
+            // substring
+            var a = 2
+            var b = 3
+            var s = 'VcrTing'
+            console.log(s + '.substring(' + a + ', ' + b + ') =', s.substring(a, b))
+            // slice
+            var a = -1
+            var b = -3
+            var s = 'VcrTing'
+            console.log(s + '.slice(' + b + ') =', s.slice(b))
+
+            // replace
+            var r = 'zlt'
+            var t = '1998'
+            var s = 'ZT123zlt'
+            console.log(s + '.replace(' + r + ', ' + t + ') =', s.replace(r, t))
+            // search
+            console.log(s + '.serach(' + r + ') =', s.search(r))
+
+            // split
+            var a = '='
+            var s = 'a=b=c'
+            console.log(s + '.split(' + a + ') =', s.split(a))
+            // toLowerCase
+            console.log(s + '.toLowerCase() =', s.toLowerCase())
+            // toUpperCase
+            console.log(s + 'toUpperCase() =', s.toUpperCase())
+        </script>
+    </body>
+</html>

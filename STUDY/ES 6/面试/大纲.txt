@@ -1,0 +1,10 @@
+1: 把以下代码使用两种方法，依次输出0-9
+    var funcs = []
+    for (var i = 0; i < 10; i++) {
+        funcs.push(function () {
+            console.log(i)
+        })
+    }
+    funcs.forEach(function (func) {
+        func(); //输出十个10
+    })
